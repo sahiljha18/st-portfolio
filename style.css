@@ -28,6 +28,18 @@ header{
     display: flex;
     justify-content: space-between; 
     align-items: center;
+     animation: navDown 1s ease forwards;
+}
+@keyframes navDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 .h1 ,span{
     color:#8449D1;
@@ -112,7 +124,20 @@ i:hover{
 /*left side*/
 .hero-content{
    max-width:600px;
+ animation: slideInLeft 1s ease forwards;
+}
 
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 .hello {
     font-size: 20px;
@@ -152,6 +177,20 @@ i:hover{
     display: flex;
     gap: 20px;
     margin-top: 30px;
+    animation: fadeUp 1s ease forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+}
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .btn {
@@ -189,7 +228,19 @@ i:hover{
     display: flex;
     justify-content: center;
     align-items: center;
+     animation: slideInRight 1.5s ease forwards;
   
+}
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .hero-image img {
@@ -281,13 +332,301 @@ i:hover{
 .skills-logo i:hover {
     transform: translateY(-8px) scale(1.15);
 }
-.projects{
-    min-height: 100px;
-   padding: 50px;
-  
+/* =========================
+   PROJECTS SECTION
+========================= */
+
+.projects {
+    min-height: 100vh;
+    padding: 100px 6%;
+    background: #0B0B0F;
+    color: #F5F3FF;
 }
-.project h1{
-     font-weight: 600px;
-  font-size:xx-large;
-  margin-left: 107px;
+
+/* Heading */
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-heading h2 {
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+.section-heading p {
+    font-size: 20px;
+    color: #b8b5c5;
+}
+
+.heading-line {
+    width: 250px;
+    height: 2px;
+    background: #211a30;
+    margin: 0 auto 20px;
+    position: relative;
+}
+
+.heading-line span {
+    width: 12px;
+    height: 12px;
+    background: #A855F7;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 15px #A855F7;
+}
+
+
+/* =========================
+   PROJECT CONTAINER
+========================= */
+
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1400px;
+    margin: auto;
+}
+
+
+/* =========================
+   PROJECT CARD
+========================= */
+
+.project-card {
+    background: linear-gradient(
+        145deg,
+        #171522,
+        #0f0e18
+    );
+
+    border: 1px solid #51258a;
+    border-radius: 25px;
+    overflow: hidden;
+
+    transition: 0.4s ease;
+
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.08);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+
+    border-color: #A855F7;
+
+    box-shadow:
+        0 15px 40px rgba(168, 85, 247, 0.2);
+}
+
+
+/* =========================
+   PROJECT IMAGE
+========================= */
+
+.project-image {
+    height: 280px;
+    margin: 20px 20px 0;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   PROJECT CONTENT
+========================= */
+
+.project-content {
+    padding: 25px;
+}
+
+.project-category {
+    display: inline-block;
+
+    padding: 7px 15px;
+
+    border: 1px solid #A855F7;
+    border-radius: 20px;
+
+    color: #c084fc;
+
+    font-size: 14px;
+
+    margin-bottom: 15px;
+}
+
+.project-content h3 {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.project-content p {
+    color: #b9b6c5;
+
+    line-height: 1.7;
+
+    font-size: 16px;
+
+    min-height: 80px;
+}
+
+
+/* =========================
+   TECH STACK
+========================= */
+
+.tech-stack {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    margin: 20px 0;
+}
+
+.tech-stack span {
+    padding: 7px 13px;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+
+    border: 1px solid;
+}
+
+/* Individual technologies */
+
+.html {
+    color: #ff9d00;
+    border-color: #ff9d00 !important;
+}
+
+.css {
+    color: #4db8ff;
+    border-color: #4db8ff !important;
+}
+
+.js {
+    color: #ffe600;
+    border-color: #ffe600 !important;
+}
+
+.react {
+    color: #4de1ff;
+    border-color: #4de1ff !important;
+}
+
+.node {
+    color: #83d442;
+    border-color: #83d442 !important;
+}
+
+.mongo {
+    color: #7ddd43;
+    border-color: #7ddd43 !important;
+}
+
+
+/* =========================
+   PROJECT LINKS
+========================= */
+
+.project-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 25px;
+}
+
+.live-btn {
+    text-decoration: none;
+
+    color: #c084fc;
+
+    border: 1px solid #7c3aed;
+
+    padding: 12px 18px;
+
+    border-radius: 8px;
+
+    transition: 0.3s ease;
+}
+
+.live-btn:hover {
+    background: #7c3aed;
+    color: white;
+
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+}
+
+.code-btn {
+    text-decoration: none;
+
+    color: #F5F3FF;
+
+    font-size: 16px;
+
+    transition: 0.3s ease;
+}
+
+.code-btn span {
+    margin-left: 8px;
+    font-size: 20px;
+}
+
+.code-btn:hover {
+    color: #A855F7;
+}
+
+
+/* =========================
+   MORE PROJECTS
+========================= */
+
+.more-projects {
+    display: flex;
+
+    width: fit-content;
+
+    margin: 40px auto 0;
+
+    padding: 15px 30px;
+
+    border: 1px solid #A855F7;
+
+    border-radius: 12px;
+
+    color: #c084fc;
+
+    text-decoration: none;
+
+    font-size: 18px;
+
+    gap: 15px;
+
+    transition: 0.3s ease;
+}
+
+.more-projects:hover {
+    background: #A855F7;
+    color: white;
+
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.4);
 }
